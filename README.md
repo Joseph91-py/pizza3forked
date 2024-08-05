@@ -12,7 +12,7 @@
 
 ## Overview
 
-Main scripts and classes are shown here. The demonstrations of implemented features are available as "workshops" (0 = draft, 1= first workable, 2= first production). <pizza3forked> is fully object-oriented and uses a universal container structure similar to Matlab, with self-evaluating capabilities (`param()`) or not (`pizza.private.struct()`).
+Main scripts and classes are shown here. The demonstrations of implemented features are available as "workshops" (0 = draft, 1= = first workable, 2= = first production). <pizza3forked> is fully object-oriented and uses a universal container structure similar to Matlab, with self-evaluating capabilities (`param()`) or not (`pizza.private.struct()`).
 
 ### Key Features
 
@@ -131,13 +131,13 @@ Workshop2 introduces several enhancements and new features, including:
 2. Setting time-step and salting
 3. Two examples: squeeze case and shearing case
 
-New classes and updates such as `workshop2.file` and `workshop2.group` provide additional methods for creating groups in LAMMPS, supplementing the use of the interactions class.
+New classes and updates such as `workshop2.file` and `workshop2.group` provide additional methods for creating groups in LAMMPS, supplementing the interactions class.
 
 ### Examples
 
 #### Squeeze Flow
 
-A block of fluid is squeezed between two surfaces, with the lower surface being "sensing" to detect stresses.
+A fluid block is squeezed between two surfaces, with the lower surface being "sensing" to detect stresses.
 
 #### Shear Flow
 
@@ -145,7 +145,7 @@ Detailed examples and improvements are illustrated, enhancing user experience an
 
 ## pizza.raster()
 
-Raster is a 2D space-filling model for very coarse-grained systems. The code is written to allow easy generalization in 3D.
+Raster is a 2D space-filling model for very coarse-grained systems. The code allows easy generalization in 3D.
 
 ### Principle to Generate Input Data
 
@@ -216,10 +216,10 @@ print("\n"*2,r)
 | Class                   | Description                   | Overloaded Operators and Attributes                          |
 | ----------------------- | ----------------------------- | ------------------------------------------------------------ |
 | `scriptdata()`          | Variable space: $s.variable$  | $s_{12}=s_1+s_2$, $s_1+=s_2$, $s_1=s_{12}-s_2$, $s.variable=value$, $s.variable=[]$, $s[0]$, $s[-1]$ |
-| `scriptobject()`        | "Bead" object: $b_i$          | `name="bead name", group=["group1","group2"], filename="input_filename.lmp", forcefield=forcefield_class` <br />$C=b_1+b_2+...$<br />$b_2>b_1$ |
-| `scriptobjectgroup()`   | Collection of beads: $C_k$    | `select(),group(), interactions(), forcefield(), script`<br />$C=C_1+C_2$<br />$P=C_1|C_2$ |
-| `script()`              | Script object: $S_k$          | $S(...,USER=s)$<br />`do(),write()`<br />Immediate execution: $S_{12}=S(context1)\& S(context2)$<br />Differed execution: $S_{12}=S_1+ S_2$<br />$S_{123}=S_1+ S_2*2+S_3*3$ |
-| `pipescript()`          | Pipescript object: $P_k$, $Q_k$ | `do(),script,clear,rename()`<br />$P=P_0|C_0|S_1|S_2|S_3$<br />$P_{12}=P_1+P_2*2$<br />$P[0:1]=Q[0:1]$<br />$Q = p[[2,0,1,1,2]]$<br />$Q.do([0,1,4,3])$<br />$P.USER[0].a=1$<br />$P.scripts[0].USER.a=10$ |
+| `scriptobject()`        | "Bead" object: $b_i$          | `name="bead name", group=["group1","group2"], filename="input_filename.lmp", forcefield=forcefield_class` <br />$C=b_1+b_2+\ldots$<br />$b_2>b_1$ |
+| `scriptobjectgroup()`   | Collection of beads: $C_k$    | `select(),group(), interactions(), forcefield(), script`<br />$C=C_1+C_2$<br />$P=C_1\|C_2$ |
+| `script()`              | Script object: $S_k$          | $S(...,USER=s)$<br />`do(),write()`<br />Immediate execution: $S_{12}=S(\text{context1})$ &  $S(\text{context2})$<br />Deferred execution: $S_{12}=S_1+S_2$ <br />The same with repetitions (once,twice,3 times): $S_{123}=S_1 + S_2 * 2 + S_3 * 3$ |
+| `pipescript()`          | Pipescript object: $P_k$, $Q_k$ | `do(),script,clear,rename()`<br />$P=P_0\|C_0\|S_1\|S_2\|S_3$<br />$P_{12}=P_1+P_2*2$<br />$P[0:1]=Q[0:1]$<br />$Q = p[[2,0,1,1,2]]$<br />$Q.do([0,1,4,3])$<br />$P.USER[0].a=1$<br />$P.scripts[0].USER.a=10$ |
 
 ## pizza.data3.data(), pizza.dump3.dump()
 
@@ -244,4 +244,4 @@ R.write("../tmp/data.myfirstrestart.lmp")
 
 ### Conclusion
 
-<pizza3forked> enhances the original Pizza3 toolkit by extending its capabilities for Python 3.x and facilitating multiscale modeling in LAMMPS. The integration with LLMs for faster coding and the comprehensive management of LAMMPS scripts and data make <pizza3forked> a powerful tool for researchers and engineers in computational materials science.
+<pizza3forked> enhances the original Pizza3 toolkit by extending its Python 3.x capabilities and facilitating multiscale modeling in LAMMPS. Integrating with LLMs for faster coding and the comprehensive management of LAMMPS scripts and data make <pizza3forked> a powerful tool for researchers and engineers in computational materials science.
